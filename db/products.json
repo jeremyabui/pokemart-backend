@@ -1,48 +1,48 @@
 [
-    {
-        "name": "Master Ball",
-        "price": 1000000,
-        "description": "The very best.", 
-        "image": "https://cdn.bulbagarden.net/upload/2/21/SugimoriMasterBall.png",
-        "quantity": 1,
-        "category": "Poke Balls",
-        "slug": "masterball"
-    },
-    {
-        "name": "Poke Ball",
-        "price": 25,
-        "description": "Gotta catch them all", 
-        "image": "https://cdn.bulbagarden.net/upload/a/a6/SugimoriPokeBall.png",
-        "quantity": 100,
-        "category": "Poke Balls",
-        "slug": "pokeball"
-    },
-    {
-        "name": "Potion",
-        "price": 25,
-        "description": "Need heals", 
-        "image": "https://cdn.bulbagarden.net/upload/thumb/2/2e/GO_Potion.png/200px-GO_Potion.png",
-        "quantity": 100,
-        "category": "Medicine",
-        "slug": "potion"
-    },
-    {
-        "name": "Hyper Potion",
-        "price": 100,
-        "description": "The good stuff.", 
-        "image": "https://cdn.bulbagarden.net/upload/thumb/3/3f/GO_Hyper_Potion.png/200px-GO_Hyper_Potion.png",
-        "quantity": 100,
-        "category": "Medicine",
-        "slug": "hyperpotion"
-    },
-    {
-        "name": "Ultra Ball",
-        "price": 500,
-        "description": "", 
-        "image": "https://cdn.bulbagarden.net/upload/2/26/SugimoriUltraBall.png",
-        "quantity": 10,
-        "category": "Poke Balls",
-        "slug": "ultraball"
-    }
+  {
+    "name": "Master Ball",
+    "price": 1000000,
+    "description": "The very best.", 
+    "image": "https://cdn.bulbagarden.net/upload/2/21/SugimoriMasterBall.png",
+    "quantity": 1,
+    "category": "Poke Balls",
+    "slug": "masterball"
+  },
+  {
+    "name": "Poke Ball",
+    "price": 25,
+    "description": "Gotta catch them all", 
+    "image": "https://cdn.bulbagarden.net/upload/a/a6/SugimoriPokeBall.png",
+    "quantity": 100,
+    "category": "Poke Balls",
+    "slug": "pokeball"
+  },
+  {
+    "name": "Potion",
+    "price": 25,
+    "description": "Need heals", 
+    "image": "https://cdn.bulbagarden.net/upload/thumb/2/2e/GO_Potion.png/200px-GO_Potion.png",
+    "quantity": 100,
+    "category": "Medicine",
+    "slug": "potion"
+  },
+  {
+    "name": "Hyper Potion",
+    "price": 100,
+    "description": "The good stuff.", 
+    "image": "https://cdn.bulbagarden.net/upload/thumb/3/3f/GO_Hyper_Potion.png/200px-GO_Hyper_Potion.png",
+    "quantity": 100,
+    "category": "Medicine",
+    "slug": "hyperpotion"
+  },
+  {
+    "name": "Ultra Ball",
+    "price": 500,
+    "description": "", 
+    "image": "https://cdn.bulbagarden.net/upload/2/26/SugimoriUltraBall.png",
+    "quantity": 10,
+    "category": "Poke Balls",
+    "slug": "ultraball"
+  }
 ]
 

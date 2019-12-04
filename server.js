@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 
 // API Routes
 app.use('/api/v1/auth', routes.auth);
+app.use('/api/v1/products', routes.products)
 
 // Start server
 app.listen(process.env.PORT || 4000, () => console.log(`Server connected at http://localhost:${PORT}`))

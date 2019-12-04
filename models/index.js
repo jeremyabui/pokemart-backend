@@ -3,7 +3,7 @@ const dbUrl = process.env.MONGODB_URI || 'Connected to server';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
     useCreateIndex: true,
     useUnifiedTopology: true,
 })
@@ -11,5 +11,6 @@ mongoose.connect(dbUrl, {
     .catch(err => console.log(`MongoDB connection error: ${err}`));
 
 module.exports = {
-    User: require('./Users'),
+    User: require('./User'),
+    Product: require('./Product'),
 }

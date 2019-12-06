@@ -192,6 +192,22 @@ const update = (req, res) => {
       foundUser.password = updatedPassword;
     }
 
+    if (req.body.address) {
+      foundUser.address = req.body.address;
+    }
+
+    if (req.body.city) {
+      foundUser.city = req.body.city;
+    }
+
+    if (req.body.state) {
+      foundUser.state = req.body.state;
+    }
+
+    if (req.body.zipcode) {
+      foundUser.zipcode = req.body.zipcode;
+    }
+
     foundUser.save((err, updatedUser) => {
       if (err) {
         res.json({

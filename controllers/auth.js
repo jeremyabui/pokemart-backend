@@ -55,6 +55,10 @@ const register = (req, res) => {
           name: req.body.name,
           email: req.body.email,
           password: hash,
+          address: req.body.address,
+          city: req.body.city,
+          state: req.body.state,
+          zipcode: req.body.zipcode,
         };
         db.User.create(newUser, (err, savedUser) => {
           if (err)

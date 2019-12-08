@@ -208,6 +208,10 @@ const update = (req, res) => {
       foundUser.zipcode = req.body.zipcode;
     }
 
+    if (req.body.shoppingCart) {
+      foundUser.shoppingCart = req.body.shoppingCart;
+    }
+
     foundUser.save((err, updatedUser) => {
       if (err) {
         res.json({

@@ -1,7 +1,10 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  db.Order.find({}, (err, allOrders) => {
+  db.Order.find({})
+    .populate('user')
+    .populate('products')
+    .exec((err, allOrders) => {
     if (err) return console.log(err);
     res.json({
       status: 200,
@@ -26,7 +29,10 @@ const create = (req, res) => {
 };
 
 const show = (req, res) => {
-  db.Order.findById(req.params.orderId, (err, foundOrder) => {
+  db.Order.findById(req.params.orderId)
+  .populate('user')
+  .populate('products')
+  .exec((err, foundOrder) => {
     if (err) return console.log(err);
     res.json({
       status: 200,

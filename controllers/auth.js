@@ -18,6 +18,7 @@ const db = require('../models');
 const index = (req, res) => {
   db.User.find({})
   .populate('shoppingCart')
+  .populate('orders')
   .exec((err, allUsers) => {
     if (err) return console.log(err);
     res.json({
@@ -191,6 +192,7 @@ const logout = (req, res) => {
 const show = (req, res) => {
   db.User.findById(req.params.userId)
   .populate('shoppingCart')
+  .populate('orders')
   // NOTE Need to uncomment to populate orders
   // .populate('orders')
   .exec((err, foundUser) => {
@@ -253,6 +255,10 @@ const update = (req, res) => {
 
     if (req.body.shoppingCart) {
       foundUser.shoppingCart = req.body.shoppingCart;
+    }
+
+    if (req.body.orders) {
+      foundUser.orders = req.body.orders;
     }
 
     foundUser.save((err, updatedUser) => {

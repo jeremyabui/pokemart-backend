@@ -3,22 +3,8 @@ const db = require('../models');
 
 // TODO REMOVE INDEX BEFORE DEPLOYMENT
 // Index
-const index = (req, res) => {
-  db.User.find({}, (err, allUsers) => {
-    if (err) return console.log(err);
-    res.json({
-      status: 200,
-      message: 'Show all users',
-      requestedAt: new Date().toLocaleString(),
-      count: allUsers.length,
-      data: allUsers,
-    });
-  });
-};
 // const index = (req, res) => {
-//   db.User.find({})
-//   .populate('products')
-//   .catch((err, allUsers) => {
+//   db.User.find({}, (err, allUsers) => {
 //     if (err) return console.log(err);
 //     res.json({
 //       status: 200,
@@ -29,6 +15,20 @@ const index = (req, res) => {
 //     });
 //   });
 // };
+const index = (req, res) => {
+  db.User.find({})
+  .populate('shoppingCart')
+  .exec((err, allUsers) => {
+    if (err) return console.log(err);
+    res.json({
+      status: 200,
+      message: 'Show all users',
+      requestedAt: new Date().toLocaleString(),
+      count: allUsers.length,
+      data: allUsers,
+    });
+  });
+};
 
 // const index = (req, res) => {
 //   db.User.find({}, (err, allUsers) => {
@@ -190,7 +190,7 @@ const logout = (req, res) => {
 // Show one
 const show = (req, res) => {
   db.User.findById(req.params.userId)
-  .populate('products')
+  .populate('shoppingCart')
   // NOTE Need to uncomment to populate orders
   // .populate('orders')
   .exec((err, foundUser) => {

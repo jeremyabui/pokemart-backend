@@ -32,13 +32,13 @@ const UserSchema = mongoose.Schema({
   orders: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Orders",
+      ref: "Order",
     }
   ],
   shoppingCart: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Products",
+      ref: "Product",
     }
   ],
 })

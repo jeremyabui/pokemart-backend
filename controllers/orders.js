@@ -18,6 +18,7 @@ const index = (req, res) => {
 
 const create = (req, res) => {
   db.Order.create(req.body, (err, createdOrder) => {
+    // Would need to find User DB and update to db
     if (err) return console.log(err);
     res.json({
       status: 201,

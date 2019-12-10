@@ -1,14 +1,5 @@
 [
   {
-    "name": "Master Ball",
-    "price": 1000000,
-    "description": "The very best.", 
-    "image": "https://cdn.bulbagarden.net/upload/2/21/SugimoriMasterBall.png",
-    "quantity": 1,
-    "category": "Poke Balls",
-    "slug": "masterball"
-  },
-  {
     "name": "Poke Ball",
     "price": 25,
     "description": "Gotta catch them all", 
@@ -16,6 +7,24 @@
     "quantity": 100,
     "category": "Poke Balls",
     "slug": "pokeball"
+  },
+  {
+    "name": "Ultra Ball",
+    "price": 500,
+    "description": "", 
+    "image": "https://cdn.bulbagarden.net/upload/2/26/SugimoriUltraBall.png",
+    "quantity": 10,
+    "category": "Poke Balls",
+    "slug": "ultraball"
+  },
+  {
+    "name": "Master Ball",
+    "price": 1000000,
+    "description": "The very best.", 
+    "image": "https://cdn.bulbagarden.net/upload/2/21/SugimoriMasterBall.png",
+    "quantity": 1,
+    "category": "Poke Balls",
+    "slug": "masterball"
   },
   {
     "name": "Potion",
@@ -34,15 +43,6 @@
     "quantity": 100,
     "category": "Medicine",
     "slug": "hyperpotion"
-  },
-  {
-    "name": "Ultra Ball",
-    "price": 500,
-    "description": "", 
-    "image": "https://cdn.bulbagarden.net/upload/2/26/SugimoriUltraBall.png",
-    "quantity": 10,
-    "category": "Poke Balls",
-    "slug": "ultraball"
   }
 ]
 

@@ -95,9 +95,10 @@ const register = (req, res) => {
               status: 500,
               message: 'Something went wrong. Please try again'
             });
-        res.status(201).json({ status: 201, message: 'Account successfully created'});
+        res.status(201).json({ status: 201, data: savedUser, message: 'Account successfully created'});
+        console.log(savedUser)
           // TODO FIX Create session on register
-          // req.session.currentUser = {id: foundUser._id};
+          req.session.currentUser = {id: savedUser._id};
         });
       });
     });

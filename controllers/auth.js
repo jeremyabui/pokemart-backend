@@ -3,8 +3,23 @@ const db = require('../models');
 
 // TODO REMOVE INDEX BEFORE DEPLOYMENT
 // Index
+// const index = (req, res) => {
+//   db.User.find({}, (err, allUsers) => {
+//     if (err) return console.log(err);
+//     res.json({
+//       status: 200,
+//       message: 'Show all users',
+//       requestedAt: new Date().toLocaleString(),
+//       count: allUsers.length,
+//       data: allUsers,
+//     });
+//   });
+// };
 const index = (req, res) => {
-  db.User.find({}, (err, allUsers) => {
+  db.User.find({})
+  .populate('shoppingCart')
+  .populate('orders')
+  .exec((err, allUsers) => {
     if (err) return console.log(err);
     res.json({
       status: 200,
@@ -15,6 +30,20 @@ const index = (req, res) => {
     });
   });
 };
+
+// const index = (req, res) => {
+//   db.User.find({}, (err, allUsers) => {
+//     if (err) return console.log(err);
+//     if (allUsers) {
+//       allUsers.populate('products').execPopulate((err, user) =>{
+//         if (err) return console.log(err)
+//         res.send({status: 200, shoppingCart: user.shoppingCart})
+//       })
+//     } else {
+//       res.status(500).json({message: 'User Not found'})
+//     }
+//   });
+// };
 
 //POST Register
 const register = (req, res) => {
@@ -55,6 +84,10 @@ const register = (req, res) => {
           name: req.body.name,
           email: req.body.email,
           password: hash,
+          address: req.body.address,
+          city: req.body.city,
+          state: req.body.state,
+          zipcode: req.body.zipcode,
         };
         db.User.create(newUser, (err, savedUser) => {
           if (err)
@@ -62,9 +95,10 @@ const register = (req, res) => {
               status: 500,
               message: 'Something went wrong. Please try again'
             });
-        res.status(201).json({ status: 201, message: 'Account successfully created'});
+        res.status(201).json({ status: 201, data: savedUser, message: 'Account successfully created'});
+        console.log(savedUser)
           // TODO FIX Create session on register
-          // req.session.currentUser = {id: foundUser._id};
+          req.session.currentUser = {id: savedUser._id};
         });
       });
     });
@@ -158,6 +192,8 @@ const logout = (req, res) => {
 // Show one
 const show = (req, res) => {
   db.User.findById(req.params.userId)
+  .populate('shoppingCart')
+  .populate('orders')
   // NOTE Need to uncomment to populate orders
   // .populate('orders')
   .exec((err, foundUser) => {
@@ -169,6 +205,20 @@ const show = (req, res) => {
     });
   });
 };
+// const show = (req, res) => {
+//   db.User.findById(req.params.userId, (err, foundUser) => {
+//     if (err) return console.log(err)
+//     if (foundUser) {
+//       foundUser.populate('products').execPopulate((err, user) => {
+//         if (err) return console.log(err)
+//         res.send({status: 200, shoppingCart: user.shoppingCart})
+//       })
+//     } else {
+//       res.status(500).json({message: 'User not found'})
+//     }
+//   })
+// }
+
 
 // Update
 const update = (req, res) => {
@@ -186,6 +236,30 @@ const update = (req, res) => {
     if (req.body.password) {
       let updatedPassword = bcrypt.hashSync(req.body.password, 10);
       foundUser.password = updatedPassword;
+    }
+
+    if (req.body.address) {
+      foundUser.address = req.body.address;
+    }
+
+    if (req.body.city) {
+      foundUser.city = req.body.city;
+    }
+
+    if (req.body.state) {
+      foundUser.state = req.body.state;
+    }
+
+    if (req.body.zipcode) {
+      foundUser.zipcode = req.body.zipcode;
+    }
+
+    if (req.body.shoppingCart) {
+      foundUser.shoppingCart = req.body.shoppingCart;
+    }
+
+    if (req.body.orders) {
+      foundUser.orders = req.body.orders;
     }
 
     foundUser.save((err, updatedUser) => {

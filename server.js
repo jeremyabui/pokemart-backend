@@ -13,6 +13,15 @@ const PORT = process.env.PORT
 
 
 //------- Middleware -------//
+
+// CORS
+const corsOptions = {
+  origin: ['http://localhost:3000'],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
 //Session
 app.use(
   session({

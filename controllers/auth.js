@@ -1,50 +1,6 @@
 const bcrypt = require('bcryptjs');
 const db = require('../models');
 
-// TODO REMOVE INDEX BEFORE DEPLOYMENT
-// Index
-// const index = (req, res) => {
-//   db.User.find({}, (err, allUsers) => {
-//     if (err) return console.log(err);
-//     res.json({
-//       status: 200,
-//       message: 'Show all users',
-//       requestedAt: new Date().toLocaleString(),
-//       count: allUsers.length,
-//       data: allUsers,
-//     });
-//   });
-// };
-const index = (req, res) => {
-  db.User.find({})
-  .populate('shoppingCart')
-  .populate('orders')
-  .exec((err, allUsers) => {
-    if (err) return console.log(err);
-    res.json({
-      status: 200,
-      message: 'Show all users',
-      requestedAt: new Date().toLocaleString(),
-      count: allUsers.length,
-      data: allUsers,
-    });
-  });
-};
-
-// const index = (req, res) => {
-//   db.User.find({}, (err, allUsers) => {
-//     if (err) return console.log(err);
-//     if (allUsers) {
-//       allUsers.populate('products').execPopulate((err, user) =>{
-//         if (err) return console.log(err)
-//         res.send({status: 200, shoppingCart: user.shoppingCart})
-//       })
-//     } else {
-//       res.status(500).json({message: 'User Not found'})
-//     }
-//   });
-// };
-
 //POST Register
 const register = (req, res) => {
   if (
@@ -293,8 +249,6 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
-  // TODO REMOVE INDEX
-  index,
   register,
   login,
   verify, 

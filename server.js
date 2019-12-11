@@ -16,7 +16,7 @@ const PORT = process.env.PORT
 
 // CORS
 const corsOptions = {
-  origin: ['https://pokemartecommercefrontend.herokuapp.com/'],
+  origin: ['https://pokemartecommercefrontend.herokuapp.com'],
   credentials: true,
   optionsSuccessStatus: 200,
 };

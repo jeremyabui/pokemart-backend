@@ -2,7 +2,7 @@
   {
     "name": "Poke Ball",
     "price": 25,
-    "description": "Gotta catch them all", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
     "image": "https://cdn.bulbagarden.net/upload/a/a6/SugimoriPokeBall.png",
     "quantity": 100,
     "category": "Poke Balls",
@@ -11,7 +11,7 @@
   {
     "name": "Ultra Ball",
     "price": 500,
-    "description": "", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
     "image": "https://cdn.bulbagarden.net/upload/2/26/SugimoriUltraBall.png",
     "quantity": 10,
     "category": "Poke Balls",
@@ -20,7 +20,7 @@
   {
     "name": "Master Ball",
     "price": 1000000,
-    "description": "The very best.", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
     "image": "https://cdn.bulbagarden.net/upload/2/21/SugimoriMasterBall.png",
     "quantity": 1,
     "category": "Poke Balls",
@@ -29,7 +29,7 @@
   {
     "name": "Potion",
     "price": 25,
-    "description": "Need heals", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
     "image": "https://cdn.bulbagarden.net/upload/thumb/2/2e/GO_Potion.png/200px-GO_Potion.png",
     "quantity": 100,
     "category": "Medicine",
@@ -38,7 +38,7 @@
   {
     "name": "Hyper Potion",
     "price": 100,
-    "description": "The good stuff.", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
     "image": "https://cdn.bulbagarden.net/upload/thumb/3/3f/GO_Hyper_Potion.png/200px-GO_Hyper_Potion.png",
     "quantity": 100,
     "category": "Medicine",
